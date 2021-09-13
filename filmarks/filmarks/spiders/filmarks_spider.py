@@ -60,13 +60,13 @@ class QuotesSpider(scrapy.Spider):
             elif '上映時間' in other_info_title:
                 runtime = other_info_title.split('：')[1]
 
-        # production_date
+        # production_year
         d = response.css(
             'body > div.l-main > div.p-content-detail > div.p-content-detail__head > div > div.p-content-detail__body > div.p-content-detail__main > h2 > small > a::attr(href)').get()
 
-        production_date = None
+        production_year = None
         if d is not None:
-            production_date = d.split('/')[4]
+            production_year = d.split('/')[4]
 
         # movie genres
         genres = response.css(
@@ -103,7 +103,7 @@ class QuotesSpider(scrapy.Spider):
             'original_title': original_title,
             'img_url': img_url,
             'release_date': release_date,
-            'production_date': production_date,
+            'production_year': production_year,
             'production_countries': production_countries,
             'runtime': runtime,
             'rating_score': rating_score,
