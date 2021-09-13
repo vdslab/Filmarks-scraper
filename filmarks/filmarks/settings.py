@@ -12,7 +12,7 @@ BOT_NAME = 'filmarks'
 SPIDER_MODULES = ['filmarks.spiders']
 NEWSPIDER_MODULE = 'filmarks.spiders'
 
-FEED_EXPORT_ENCODING = 'utf-8'
+FEED_EXPORT_ENCODING = 'utf_8'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'filmarks (+http://www.yourdomain.com)'
