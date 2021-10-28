@@ -109,6 +109,6 @@ class QuotesSpider(scrapy.Spider):
             'rating_score': rating_score,
             'genres': genres,
             'outline': outline,
-            'production_member': other_people,
+            'production_members': other_people,
             'actors': actors
         }
