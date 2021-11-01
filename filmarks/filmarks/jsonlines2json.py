@@ -27,7 +27,7 @@ def main():
         countries = list(countries)
         print(occupations, genres, countries)
         data = {'occupations': occupations,
-                'genres': genres, 'countires': countries, 'movies': data}
+                'genres': genres, 'countries': countries, 'movies': data}
         json.dump(data, f, ensure_ascii=False)
 
 
