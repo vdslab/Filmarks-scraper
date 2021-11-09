@@ -97,6 +97,9 @@ class QuotesSpider(scrapy.Spider):
         rating_score = response.css(
             'body > div.l-main > div.p-content-detail > div.p-content-detail__head > div > div.p-content-detail__body > div.p-content-detail__main > div.p-content-detail-state > div > div > div.c-rating__score::text').get()
 
+        trailer_url = response.css(
+            '#js-tab-content__trailer > div > iframe::attr(src)').get()
+
         yield {
             'id': id,
             'title': title,
@@ -110,5 +113,6 @@ class QuotesSpider(scrapy.Spider):
             'genres': genres,
             'outline': outline,
             'production_members': other_people,
-            'actors': actors
+            'actors': actors,
+            'trailer_url': trailer_url
         }
