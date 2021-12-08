@@ -32,7 +32,9 @@ class QuotesSpider(scrapy.Spider):
         # poster img url
         img_url = response.css(
             'body > div.l-main > div.p-content-detail > div.p-content-detail__head > div > div.p-content-detail__body > div.p-content-detail__left > div.c-content.c-content--large > div.c-content__jacket > img::attr(src)').get()
-
+        if img_url is None:
+            img_url = response.css(
+                'body > div.l-main > div.p-content-detail > div.p-content-detail__head > div > div.p-content-detail__body > div.p-content-detail__left > div.c-content.c-content--large > a > img::attr(src)').get()
         # japanese title
         title = response.css(
             'body > div.l-main > div.p-content-detail > div.p-content-detail__head > div > div.p-content-detail__body > div.p-content-detail__main > h2 > span::text').get()
